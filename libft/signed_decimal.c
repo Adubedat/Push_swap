@@ -58,7 +58,7 @@ char	*signed_conv2(char *str, va_list args, t_flags f, t_modifier m)
 		m.imt = va_arg(args, intmax_t);
 		return (ft_itoa_lli((long long int)m.imt));
 	}
-	else if (f.modifier == 6 & f.conversion != 'D')
+	else if (f.modifier == 6 && f.conversion != 'D')
 	{
 		m.st = va_arg(args, size_t);
 		return (ft_itoa_lli((long long int)m.st));

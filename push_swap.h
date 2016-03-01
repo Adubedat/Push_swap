@@ -25,6 +25,9 @@ typedef struct	s_data
 {
 	int			*a;
 	int			*b;
+    int         min;
+    int         count;
+    int         direction;
 	int			a_elem_nbr;
 	int			b_elem_nbr;
 	int			elem_nbr;
@@ -49,6 +52,10 @@ t_data			push_a(t_data data);
 t_data			rotate_a(t_data data);
 t_data			rotate_b(t_data data);
 t_data			reverse_rotate_a(t_data data);
-t_data			reverse_rotate_a(t_data data);
+t_data			reverse_rotate_b(t_data data);
+t_data          solve_1(t_data data);
+t_data          solve_2(t_data data);
+t_data          check_min(t_data data);
+int             issort(t_data data);
 
 #endif

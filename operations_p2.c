@@ -25,6 +25,8 @@ t_data	rotate_a(t_data data)
 		data.a[j - 1] = temp;
 		j--;
 	}
+    data.count++;
+    ft_printf("ra ");
 	return (data);
 }
 
@@ -41,6 +43,8 @@ t_data	rotate_b(t_data data)
 		data.b[j - 1] = temp;
 		j--;
 	}
+    data.count++;
+    ft_printf("rb ");
 	return (data);
 }
 
@@ -57,6 +61,8 @@ t_data	reverse_rotate_a(t_data data)
 		data.a[i + 1] = temp;
 		i++;
 	}
+    data.count++;
+    ft_printf("rra ");
 	return (data);
 }
 
@@ -73,5 +79,7 @@ t_data	reverse_rotate_b(t_data data)
 		data.b[i + 1] = temp;
 		i++;
 	}
+    data.count++;
+    ft_printf("rrb ");
 	return (data);
 }

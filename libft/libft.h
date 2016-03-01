@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <wchar.h>
+# include <limits.h>
+# include <stdint.h>
 # include "printf.h"
 # include "get_next_line.h"
 
