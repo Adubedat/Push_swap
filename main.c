@@ -17,6 +17,16 @@ int		main(int argc, char **argv)
 	t_data data;
 
 	data = get_input(argc, argv);
+    if (data.operation_nbr == 1 && data.color == 1)
+        ft_printf(BLUE"\nNombre d'opérations : %d"WHITE, data.count);
+    else if (data.operation_nbr == 1)
+        ft_printf("\nNombre d'opérations : %d", data.count);
+    if (data.list_options == 1)
+    {
+        ft_printf(GREEN"\nOptions disponibles :\n-i : Liste des options\n-o : "
+            "Nombre d'operations\n-v : Afficher les piles pour chaque operatio"
+            "n\n-c : Ajouter des couleurs\n-f : Afficher la pile finale"WHITE);
+    }
 	return (0);
 }
 
@@ -78,8 +88,6 @@ t_data	get_input(int argc, char **argv)
 {
 	t_data	data;
 	int		i;
-	int		j = 0;
-	int		k = 0;
 
 	data = init_data(data);
 	i = 1;
@@ -95,18 +103,6 @@ t_data	get_input(int argc, char **argv)
         data = solve_1(data);
     else
         data = solve_2(data);
-	ft_printf("Pile A : ");
-	while (j < data.a_elem_nbr)
-	{
-		ft_printf("%d ", data.a[j]);
-		j++;
-	}
-	ft_printf("\nPile B : ");
-	while (k < data.b_elem_nbr)
-	{
-		ft_printf("%d ", data.b[k]);
-		k++;
-	}
-    ft_printf("\nNombre d'opérations : %d\n", data.count);
+    ft_printf("%c", 8);
 	return (data);
 }

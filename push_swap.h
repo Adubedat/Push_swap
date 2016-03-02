@@ -13,13 +13,22 @@
 #ifndef PUSH_SWAP_H
 
 # define PUSH_SWAP_H
-# define ELEM_A_1 data.a[data.a_elem_nbr - 1]
-# define ELEM_A_2 data.a[data.a_elem_nbr - 2]
-# define ELEM_B_1 data.b[data.b_elem_nbr - 1]
-# define ELEM_B_2 data.b[data.b_elem_nbr - 2]
-# define ELEM_A data.a[data.a_elem_nbr]
-# define ELEM_B data.b[data.b_elem_nbr]
-# include "libft/libft.h"
+# define ELEM_A_1   data.a[data.a_elem_nbr - 1]
+# define ELEM_A_2   data.a[data.a_elem_nbr - 2]
+# define ELEM_B_1   data.b[data.b_elem_nbr - 1]
+# define ELEM_B_2   data.b[data.b_elem_nbr - 2]
+# define ELEM_A     data.a[data.a_elem_nbr]
+# define ELEM_B     data.b[data.b_elem_nbr]
+# define BLACK      "\033[0;30m"
+# define RED        "\033[0;31m"
+# define GREEN      "\033[0;32m"
+# define YELLOW     "\033[0;33m"
+# define BLUE       "\033[0;34m"
+# define PURPLE     "\033[0;35m"
+# define CYAN       "\033[0;36m"
+# define GREY       "\033[0;37m"
+# define WHITE      "\033[0;0m"
+# include           "libft/libft.h"
 
 typedef struct	s_data
 {

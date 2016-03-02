@@ -26,7 +26,6 @@ t_data  solve_1(t_data data)
 {
     while (issort(data) == 0)
     {
-        ft_putchar('A');
         data = check_min(data);
         if (data.direction == 1)
         {
@@ -66,9 +65,9 @@ t_data  solve_2(t_data data)
     {
         if (ELEM_A_1 > ELEM_A_2 && ELEM_A_1 < data.a[0])
             data = swap_a(data);
-        else if (ELEM_A_1 > data.a[0])
+        else if (ELEM_A_1 > data.a[0] && ELEM_A_1 > ELEM_A_2)
             data = rotate_a(data);
-        else if (ELEM_A_1 < data.a[0])
+        else
             data = reverse_rotate_a(data);
     }
     return (data);
