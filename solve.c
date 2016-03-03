@@ -5,14 +5,14 @@ t_data  check_min(t_data data)
     int i;
 
     data.min = data.a[0];
-    data.direction = 0;
+    data.direction = 1;
     i = 0;
     while (i < data.a_elem_nbr)
     {
         if (data.a[i] < data.min)
         {
             data.min = data.a[i];
-            if ((i * 2) > data.a_elem_nbr)
+            if (i < (data.a_elem_nbr / 2))
                 data.direction = 1;
             else
                 data.direction = 0;
@@ -27,7 +27,7 @@ t_data  solve_1(t_data data)
     while (issort(data) == 0)
     {
         data = check_min(data);
-        if (data.direction == 1)
+        if (data.direction == 0)
         {
             while (ELEM_A_1 != data.min)
                 data = rotate_a(data);
@@ -63,12 +63,12 @@ t_data  solve_2(t_data data)
 {
     while (issort(data) == 0)
     {
-        if (ELEM_A_1 > ELEM_A_2 && ELEM_A_1 < data.a[0])
-            data = swap_a(data);
-        else if (ELEM_A_1 > data.a[0] && ELEM_A_1 > ELEM_A_2)
+        if (ELEM_A_1 > data.a[0] && ELEM_A_1 > ELEM_A_2)
             data = rotate_a(data);
-        else
+        else if (ELEM_A_2 > ELEM_A_1 && ELEM_A_2 > data.a[0])
             data = reverse_rotate_a(data);
+        else
+            data = swap_a(data);
     }
     return (data);
 }
