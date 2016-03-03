@@ -29,6 +29,8 @@ int		main(int argc, char **argv)
             "Nombre d'operations\n-v : Afficher les piles pour chaque operatio"
             "n\n-c : Ajouter des couleurs\n-f : Afficher la pile finale"WHITE);
     }
+    free(data.a);
+    free(data.b);
 	return (0);
 }
 
