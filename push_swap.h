@@ -41,7 +41,7 @@ typedef struct	s_data
 	int			b_elem_nbr;
 	int			elem_nbr;
 	int			operation_nbr;
-	int			print_pile;
+	int			print_piles;
 	int			color;
 	int			final_result;
 	int			list_options;
@@ -66,5 +66,7 @@ t_data          solve_1(t_data data);
 t_data          solve_2(t_data data);
 t_data          check_min(t_data data);
 int             issort(t_data data);
+void            print_final_result(t_data data);
+void            print_piles(t_data data, char *str);
 
 #endif

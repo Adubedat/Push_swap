@@ -26,7 +26,13 @@ t_data	rotate_a(t_data data)
 		j--;
 	}
     data.count++;
-    ft_printf("ra ");
+    if (data.color == 1)
+        ft_printf(RED);
+    if (data.print_piles == 0)
+        ft_printf("ra ");
+    else
+        print_piles(data, "ra");
+    ft_printf(WHITE);
 	return (data);
 }
 
@@ -44,7 +50,13 @@ t_data	rotate_b(t_data data)
 		j--;
 	}
     data.count++;
-    ft_printf("rb ");
+    if (data.color == 1)
+        ft_printf(RED);
+    if (data.print_piles == 0)
+        ft_printf("rb ");
+    else
+        print_piles(data, "rb");
+    ft_printf(WHITE);
 	return (data);
 }
 
@@ -62,7 +74,13 @@ t_data	reverse_rotate_a(t_data data)
 		i++;
 	}
     data.count++;
-    ft_printf("rra ");
+    if (data.color == 1)
+        ft_printf(PURPLE);
+    if (data.print_piles == 0)
+        ft_printf("rra ");
+    else
+        print_piles(data, "rra");
+    ft_printf(WHITE);
 	return (data);
 }
 
@@ -80,6 +98,12 @@ t_data	reverse_rotate_b(t_data data)
 		i++;
 	}
     data.count++;
-    ft_printf("rrb ");
+    if (data.color == 1)
+        ft_printf(RED);
+    if (data.print_piles == 0)
+        ft_printf("rrb ");
+    else
+        print_piles(data, "rrb");
+    ft_printf(WHITE);
 	return (data);
 }
