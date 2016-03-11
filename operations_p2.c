@@ -6,7 +6,7 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/29 23:05:33 by adubedat          #+#    #+#             */
-/*   Updated: 2016/02/29 23:22:19 by adubedat         ###   ########.fr       */
+/*   Updated: 2016/03/07 15:34:27 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ t_data	rotate_a(t_data data)
 		data.a[j - 1] = temp;
 		j--;
 	}
-    data.count++;
-    if (data.color == 1)
-        ft_printf(RED);
-    if (data.print_piles == 0)
-        ft_printf("ra ");
-    else
-        print_piles(data, "ra");
-    ft_printf(WHITE);
+	data.count++;
+	if (data.color == 1)
+		ft_printf(RED);
+	if (data.print_piles == 0)
+		ft_printf("ra ");
+	else
+		print_piles(data, "ra");
+	ft_printf(WHITE);
 	return (data);
 }
 
@@ -49,14 +49,14 @@ t_data	rotate_b(t_data data)
 		data.b[j - 1] = temp;
 		j--;
 	}
-    data.count++;
-    if (data.color == 1)
-        ft_printf(RED);
-    if (data.print_piles == 0)
-        ft_printf("rb ");
-    else
-        print_piles(data, "rb");
-    ft_printf(WHITE);
+	data.count++;
+	if (data.color == 1)
+		ft_printf(RED);
+	if (data.print_piles == 0)
+		ft_printf("rb ");
+	else
+		print_piles(data, "rb");
+	ft_printf(WHITE);
 	return (data);
 }
 
@@ -73,14 +73,14 @@ t_data	reverse_rotate_a(t_data data)
 		data.a[i + 1] = temp;
 		i++;
 	}
-    data.count++;
-    if (data.color == 1)
-        ft_printf(PURPLE);
-    if (data.print_piles == 0)
-        ft_printf("rra ");
-    else
-        print_piles(data, "rra");
-    ft_printf(WHITE);
+	data.count++;
+	if (data.color == 1)
+		ft_printf(CYAN);
+	if (data.print_piles == 0)
+		ft_printf("rra ");
+	else
+		print_piles(data, "rra");
+	ft_printf(WHITE);
 	return (data);
 }
 
@@ -97,13 +97,13 @@ t_data	reverse_rotate_b(t_data data)
 		data.b[i + 1] = temp;
 		i++;
 	}
-    data.count++;
-    if (data.color == 1)
-        ft_printf(RED);
-    if (data.print_piles == 0)
-        ft_printf("rrb ");
-    else
-        print_piles(data, "rrb");
-    ft_printf(WHITE);
+	data.count++;
+	if (data.color == 1)
+		ft_printf(RED);
+	if (data.print_piles == 0)
+		ft_printf("rrb ");
+	else
+		print_piles(data, "rrb");
+	ft_printf(WHITE);
 	return (data);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/29 18:15:27 by adubedat          #+#    #+#             */
-/*   Updated: 2016/02/29 23:22:21 by adubedat         ###   ########.fr       */
+/*   Created: 2016/03/07 16:00:48 by adubedat          #+#    #+#             */
+/*   Updated: 2016/03/07 16:22:55 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,31 @@ int		main(int argc, char **argv)
 	t_data data;
 
 	data = get_input(argc, argv);
-    if (data.operation_nbr == 1 && data.color == 1)
-        ft_printf(BLUE"\nNombre d'opérations : %d"WHITE, data.count);
-    else if (data.operation_nbr == 1)
-        ft_printf("\nNombre d'opérations : %d", data.count);
-    if (data.final_result == 1)
-        print_final_result(data);
-    if (data.list_options == 1)
-    {
-        ft_printf(GREEN"\nOptions disponibles :\n-i : Liste des options\n-o : "
-            "Nombre d'operations\n-v : Afficher les piles pour chaque operatio"
-            "n\n-c : Ajouter des couleurs\n-f : Afficher la pile finale"WHITE);
-    }
-    free(data.a);
-    free(data.b);
+	if (data.operation_nbr == 1 && data.color == 1)
+		ft_printf("%s\nNombre d'opérations : %d%s", CYAN, data.count, WHITE);
+	else if (data.operation_nbr == 1)
+		ft_printf("\nNombre d'opérations : %d", data.count);
+	if (data.final_result == 1)
+		print_final_result(data);
+	if (data.list_options == 1)
+	{
+		ft_printf("%s\nOptions disponibles :%s", GREEN, WHITE);
+		ft_printf("\n-i : Liste des options");
+		ft_printf("\n-o : Nombre d'operations");
+		ft_printf("\n-v : Afficher les piles pour chaque operation");
+		ft_printf("\n-c : Ajouter des couleurs");
+		ft_printf("\n-f : Afficher la pile finale");
+	}
+	free(data.a);
+	free(data.b);
 	return (0);
 }
 
 t_data	init_data(t_data data)
 {
 	data.operation_nbr = 0;
-    data.min = 0;
-    data.count = 0;
+	data.min = 0;
+	data.count = 0;
 	data.print_piles = 0;
 	data.color = 0;
 	data.final_result = 0;
@@ -102,11 +105,11 @@ t_data	get_input(int argc, char **argv)
 	data.b = (int*)malloc(sizeof(int) * argc - i);
 	data.elem_nbr = argc - i;
 	data.a_elem_nbr = data.elem_nbr;
-	data = get_piles(argc, argv, i, data);
-    if (data.elem_nbr > 3)
-        data = solve_1(data);
-    else
-        data = solve_2(data);
-    ft_printf("%c", 8);
+	data = get_piles(argv, i, data);
+	if (data.elem_nbr > 3)
+		data = solve_1(data);
+	else
+		data = solve_2(data);
+	ft_printf("%c", 8);
 	return (data);
 }

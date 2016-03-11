@@ -6,7 +6,7 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/29 19:29:20 by adubedat          #+#    #+#             */
-/*   Updated: 2016/02/29 22:40:54 by adubedat         ###   ########.fr       */
+/*   Updated: 2016/03/07 16:07:53 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_atoi_error(char *str)
 	return ((int)result);
 }
 
-t_data	get_piles(int argc, char **argv, int i, t_data data)
+t_data	get_piles(char **argv, int i, t_data data)
 {
 	int	j;
 	int	k;
@@ -72,8 +72,8 @@ t_data	get_piles(int argc, char **argv, int i, t_data data)
 		while (argv[i][j])
 		{
 			if ((argv[i][j] == '-' && j == 0 && argv[i][j + 1] >= '0'
-				&& argv[i][j + 1] <= '9') || (argv[i][j] >= '0'
-				&& argv[i][j] <= '9'))
+						&& argv[i][j + 1] <= '9') || (argv[i][j] >= '0'
+							&& argv[i][j] <= '9'))
 				j++;
 			else
 			{
